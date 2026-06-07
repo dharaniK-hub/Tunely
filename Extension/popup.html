@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tunely</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="tunely-popup">
+    <div class="popup-header">
+      <h1>🎵 Tunely</h1>
+      <span class="version">v3.0</span>
+    </div>
+
+    <div class="popup-content">
+      <!-- Current Track Info -->
+      <div class="section">
+        <h3>Now Playing</h3>
+        <div id="current-track" class="track-info">
+          <p class="placeholder">No track detected</p>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div class="section">
+        <h3>Settings</h3>
+        
+        <label class="setting-item">
+          <input type="checkbox" id="enabled-toggle">
+          <span>Enable Tunely</span>
+        </label>
+
+        <label class="setting-item">
+          <input type="checkbox" id="auto-translate-toggle">
+          <span>Auto Translate</span>
+        </label>
+
+        <label class="setting-item">
+          <input type="checkbox" id="sync-lyrics-toggle">
+          <span>Sync Lyrics with Audio</span>
+        </label>
+
+        <div class="setting-item">
+          <label for="target-lang">Target Language:</label>
+          <select id="target-lang">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="it">Italian</option>
+            <option value="pt">Portuguese</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="zh">Chinese</option>
+          </select>
+        </div>
+
+        <div class="setting-item">
+          <label for="theme">Theme:</label>
+          <select id="theme">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="section">
+        <h3>Actions</h3>
+        <button id="show-lyrics-btn" class="btn btn-primary">Show Lyrics</button>
+        <button id="settings-btn" class="btn">Open Settings</button>
+      </div>
+
+      <!-- Status -->
+      <div id="status" class="status"></div>
+    </div>
+
+    <div class="popup-footer">
+      <small>Tunely v3.0 | <a href="https://github.com" target="_blank">GitHub</a></small>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Tunely - Spotify Lyrics Translator",
+  "version": "0.3.0",
+  "description": "Real-time lyrics translation and sync for Spotify with instant English translations",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage",
+    "webRequest",
+    "tabs",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://open.spotify.com/*",
+    "http://localhost:8000/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    },
+    "default_title": "Tunely - Lyrics Translator"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://open.spotify.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["https://open.spotify.com/*"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
